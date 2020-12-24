@@ -1,0 +1,20 @@
+-f https://download.pytorch.org/whl/torch_stable.html
+-f https://dl.fbaipublicfiles.com/detectron2/wheels/cpu/torch1.7/index.html
+torch==1.7.1+cpu
+certifi==2020.12.5
+click==7.1.2
+dataclasses
+# detectron2
+dnspython==1.16.0
+fastapi==0.63.0
+h11==0.11.0
+opencv-python==4.4.0.46
+pydantic==1.7.3
+pymongo==3.11.2
+python-multipart==0.0.5
+six==1.15.0
+starlette==0.13.6
+torchvision==0.8.2+cpu
+typing-extensions==3.7.4.3
+uvicorn==0.13.2
+

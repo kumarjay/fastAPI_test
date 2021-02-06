@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging to Amazon ECR
+      - aws --version
+      - REPOSITORY_URI=344374056555.dkr.ecr.us-east-2.amazonaws.com/first
+  build:
+    commands:
+      - echo Build started on 'date'
+      - docker build -t $REPOSITORY_URI:latest .
+  post_build:
+    commands:
+      - echo build components on 'date'
+      - docker push $REPOSITORY_URI:latest
+      - echo writing image to defined file
+      - cat imagedefinations.json
+  artifacts:
+    files: imagedefinations.json
+    

@@ -6,7 +6,7 @@ phases:
       - echo Logging to Amazon ECR
       - aws --version
       - aws ecr get-login
-      - eval $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
+      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
       - sudo docker login -u AWS -p $(aws ecr get-login-password --region us-east-2)
       - docker login -u AWS -p jay#2107 344374056555.dkr.ecr.us-east-2.amazonaws.com
       - eval $(aws ecr get-login | sed 's|https://||')

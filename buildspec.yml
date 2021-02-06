@@ -16,6 +16,6 @@ phases:
       - docker push $REPOSITORY_URI:latest
       - echo writing image to defined file
       - cat imagedefinations.json
-  artifacts:
-    files: imagedefinations.json
+artifacts:
+  files: imagedefinations.json
     

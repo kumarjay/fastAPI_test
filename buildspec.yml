@@ -7,9 +7,6 @@ phases:
       - aws --version
       - aws ecr get-login
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-      - sudo docker login -u AWS -p $(aws ecr get-login-password --region us-east-2)
-      - docker login -u AWS -p jay#2107 344374056555.dkr.ecr.us-east-2.amazonaws.com
-      - eval $(aws ecr get-login | sed 's|https://||')
       - REPOSITORY_URI=344374056555.dkr.ecr.us-east-2.amazonaws.com/first
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
